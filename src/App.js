@@ -11,6 +11,7 @@ function Hello (props) {
   const submitLogin = () => {
     if(userName === 'Kevin' && password === 'donut shop') {
       setLoginToken('hallelujah!');
+      
     }
   }
 const handleSubmit = (e) => {
@@ -59,6 +60,13 @@ function App() {
   );
 }
 
+function Pet (props) {
+  return (<div>
+    <div>{props.id}</div>
+    <div>{props.name}</div>
+    </div>)
+}
+
 function Pets() {
   const [coolPets, setCoolPets] = useState([]);
   
@@ -72,10 +80,10 @@ function Pets() {
       .then(data => {
         setCoolPets(data);
         // console.log(Object.keys(coolPets))
-        coolPets.map((el) => {
-          let firstKey = Object.keys(el)[0];
-                console.log(firstKey);
-              })
+        // coolPets.map((el) => {
+        //   let firstKey = Object.keys(el)[0];
+        //         console.log(firstKey);
+        //       })
       })
   }, [])
 
@@ -99,6 +107,16 @@ function Pets() {
   //     )
   //   }
   // }
+  const allThePets2 = () => {
+    if(coolPets.length > 0) {
+      return  coolPets.map((el, index) => {
+          return <Pet key={index} id={index} name={el.name} />;
+        })
+    }
+    else {return(
+      <div>no pets found</div>
+      )}
+  }
 
   const allThePets = () => {
     if(coolPets.length > 0) {
@@ -140,7 +158,7 @@ function Pets() {
   return (
     <div>
     <h1>Here are the pets!</h1>
-    {allThePets()}
+    {allThePets2()}
     </div>
   );
    
