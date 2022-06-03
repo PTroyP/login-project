@@ -1,0 +1,7 @@
+[
+    {"name" :"Mr. Boots", "animal":"cat","legs":4,"bird-kills":27,"age":12},
+    
+    {"name" :"Audrey","animal":"dog","legs":4,"bird-kills":0,"nickname":"Great Gollumpus","status":"deceased"},
+    
+    {"name" :"Buffy","animal":"hamster","legs":4,"status":"long buried"}
+]

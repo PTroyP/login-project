@@ -50,6 +50,11 @@ form .login {
   color: white;
 }
 
+.petBox {
+  border: 1px solid black;
+  margin: 20px;
+}
+
 
 @keyframes App-logo-spin {
   from {
